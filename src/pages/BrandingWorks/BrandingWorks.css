@@ -1,0 +1,346 @@
+/* --- BRANDING WORKS PAGE CSS --- */
+
+.branding-works-page {
+  --primary-blue: #6C63FF;
+  --bg-dark: #000000;
+  --bg-light: #ffffff;
+  --bg-offwhite: #fafafa;
+  --text-dark: #111111;
+  --text-light: #ffffff;
+  --text-gray: #6b7280;
+  --text-gray-light: #a0a0a0;
+  --border-light: rgba(255, 255, 255, 0.2);
+  --border-dark: #e5e7eb;
+
+  color: var(--text-dark);
+  background-color: var(--bg-offwhite);
+}
+
+.branding-works-page h1,
+.branding-works-page h2,
+.branding-works-page h3,
+.branding-works-page h4,
+.branding-works-page p {
+  margin: 0;
+}
+
+.branding-works-subtitle-blue {
+  color: var(--primary-blue);
+  font-family: 'Switzer', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* --- BUTTONS --- */
+.branding-works-btn-outline-dark {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.branding-works-btn-outline-dark {
+  background: transparent;
+  color: #090909;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  width: 302px;
+  height: 68px;
+  padding: 10px 10px 10px 22px;
+  gap: 20px;
+  opacity: 1;
+  font-family: 'Switzer', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-decoration: none;
+}
+
+.branding-works-btn-outline-dark svg {
+  width: 32px;
+  height: 32px;
+}
+
+.branding-works-btn-outline-dark:hover {
+  border-color: #6C63FF;
+  color: #6C63FF;
+  background: transparent;
+}
+
+/* --- HERO SECTION --- */
+.branding-works-hero-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  height: 920px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-image: url('../../assets/images/Rectangle-port.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.branding-works-hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.branding-works-hero-content h1 {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.branding-works-hero-content p {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.branding-works-scroll-indicator {
+  position: absolute;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.branding-works-scroll-indicator svg circle {
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.branding-works-scroll-indicator svg path {
+  transition: stroke 0.3s ease;
+}
+
+.branding-works-scroll-indicator:hover svg circle {
+  fill: #6C63FF !important;
+  stroke: #6C63FF !important;
+}
+
+.branding-works-scroll-indicator:hover svg path {
+  stroke: #ffffff !important;
+}
+
+.branding-works-scroll-indicator span {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* --- PROJECTS SECTION --- */
+.branding-works-projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.branding-works-project-case {
+  display: flex;
+  flex-direction: column;
+}
+
+.branding-works-project-intro {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.branding-works-project-main-image {
+  flex: 1.2;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 400px;
+  background-color: #e5e7eb;
+}
+
+.branding-works-project-text {
+  flex: 1;
+}
+
+.branding-works-project-text h2 {
+  font-family: 'Switzer', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.branding-works-project-text p {
+  font-family: 'Switzer', sans-serif;
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Common Image Placeholder */
+.branding-works-img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d1d5db;
+  color: #6b7280;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.branding-works-project-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.branding-works-gallery-img {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.branding-works-gallery-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid Layouts */
+.branding-works-grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.branding-works-grid-2-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.branding-works-grid-custom-havnest {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.branding-works-large-left {
+  grid-row: 1 / span 2;
+  min-height: 100%;
+}
+
+/* --- CTA SECTION --- */
+.branding-works-cta-section {
+  text-align: center;
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+}
+
+.branding-works-cta-section h2 {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.branding-works-cta-section p {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 2.5rem;
+}
+
+/* Responsive constraints */
+@media (max-width: 1024px) {
+  .branding-works-project-intro {
+    flex-direction: column;
+  }
+  .branding-works-grid-custom-havnest {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .branding-works-large-left {
+    grid-row: auto;
+  }
+  .branding-works-grid-3-col, 
+  .branding-works-grid-2-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .branding-works-grid-3-col, 
+  .branding-works-grid-2-col {
+    grid-template-columns: 1fr;
+  }
+
+  .branding-works-hero-dark {
+    height: 500px;
+  }
+
+  .branding-works-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .branding-works-hero-content p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  br {
+    display: none;
+  }
+}

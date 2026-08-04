@@ -1,0 +1,286 @@
+/* Our Process Section */
+.process-section {
+  width: 100%;
+  background: linear-gradient(93.18deg, #000000 80.61%, #1F1C56 101.33%);
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 80px 20px;
+}
+
+.process-container {
+  width: 100%;
+  max-width: 1282px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Header styling */
+.process-header {
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.process-subtitle {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #6C63FF;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 21px;
+}
+
+.process-title {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Timeline Wrapper */
+.process-timeline-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* Dotted Connector Line */
+.process-connector-line {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Steps container */
+.process-steps {
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual step item */
+.process-step-item {
+  display: flex;
+  position: relative;
+}
+
+/* Badge (Circle carrying the Icon) */
+.process-step-badge {
+  width: 56px;
+  height: 56px;
+  background-color: #6C63FF;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.process-step-badge:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(108, 99, 255, 0.6);
+  background-color: #7b73ff;
+}
+
+.process-step-image {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.process-step-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.process-step-title {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.process-step-number {
+  color: #ffffff;
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.process-step-description {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #999999;
+  margin: 0;
+}
+
+/* DESKTOP (Horizontal Timeline) */
+@media (min-width: 992px) {
+  .process-section {
+    width: 100%;
+    max-width: 100%;
+    height: 334px;
+    padding: 0;
+    position: relative;
+  }
+
+  .process-container {
+    width: 1456px;
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .process-header {
+    margin: 0;
+  }
+
+  .process-subtitle {
+    position: absolute;
+    left: 85px;
+    top: 30px;
+    margin: 0;
+  }
+
+  .process-title {
+    position: absolute;
+    left: 85px;
+    top: 55px;
+    margin: 0;
+  }
+
+  .process-timeline-wrapper {
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    top: 140px;
+    margin-top: 0;
+  }
+
+  .process-connector-line {
+    top: 27px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 40%, transparent 40%, transparent 100%);
+    background-size: 10px 2px;
+    background-repeat: repeat-x;
+  }
+
+  .process-steps {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .process-step-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+  }
+
+  .process-step-badge {
+    margin-bottom: 24px;
+  }
+
+  .process-step-content {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .process-step-title {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* TABLET & MOBILE (Vertical Timeline) */
+@media (max-width: 991px) {
+  .process-section {
+    padding: 60px 20px;
+  }
+
+  .process-title {
+    font-size: 36px;
+  }
+
+  .process-timeline-wrapper {
+    padding-left: 10px;
+  }
+
+  .process-connector-line {
+    top: 28px;
+    bottom: 28px;
+    left: 27px;
+    width: 2px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.25) 40%, transparent 40%, transparent 100%);
+    background-size: 2px 10px;
+    background-repeat: repeat-y;
+  }
+
+  .process-steps {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .process-step-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .process-step-content {
+    align-items: flex-start;
+    gap: 6px;
+    padding-top: 4px;
+  }
+
+  .process-step-title {
+    font-size: 20px;
+  }
+
+  .process-step-description {
+    font-size: 15px;
+    max-width: 480px;
+  }
+}
+
+/* Small Screens Tweaks */
+@media (max-width: 600px) {
+  .process-title {
+    font-size: 28px;
+  }
+
+  .process-step-item {
+    gap: 16px;
+  }
+
+  .process-step-badge {
+    width: 48px;
+    height: 48px;
+  }
+
+  .process-connector-line {
+    left: 23px;
+    top: 24px;
+    bottom: 24px;
+  }
+}

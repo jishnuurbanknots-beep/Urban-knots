@@ -1,0 +1,294 @@
+/* Modal Bottom Wrapper - Transparent so the home page stays fully visible */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 9999;
+  padding: 20px 20px 80px 20px;
+  box-sizing: border-box;
+}
+
+/* Modal Card Box - Glassmorphic design */
+.lets-work-together-card {
+  position: relative;
+  background: rgba(15, 15, 15, 0.5);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  width: 90%;
+  max-width: 620px;
+  padding: 32px 36px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  animation: zoomInCard 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  color: #ffffff;
+  font-family: 'Switzer', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Close Button in top right */
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  z-index: 12;
+}
+
+.modal-close-btn:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: rotate(90deg);
+}
+
+.modal-close-btn:active {
+  transform: scale(0.92) rotate(90deg);
+}
+
+/* Form content alignment */
+.modal-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+/* Title text */
+.modal-title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.highlight-purple {
+  color: #6C63FF;
+}
+
+/* Description message */
+.modal-description {
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+/* Email input text box container */
+.modal-input-group {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s ease;
+  margin-top: 4px;
+}
+
+.modal-input-group:focus-within {
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.4);
+}
+
+.modal-input-icon {
+  color: #666666;
+  flex-shrink: 0;
+}
+
+.modal-email-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: #111111;
+  width: 100%;
+  font-family: 'Switzer', sans-serif;
+}
+
+.modal-email-input::placeholder {
+  color: #999999;
+}
+
+/* Bottom Actions Row */
+.modal-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  gap: 20px;
+}
+
+/* Left side disclaimer */
+.modal-privacy-policy {
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  margin: 0;
+}
+
+.modal-privacy-policy p {
+  margin: 0;
+}
+
+/* Submit button styling */
+.modal-submit-button {
+  background-color: #6C63FF;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Switzer', sans-serif;
+}
+
+.modal-submit-button:hover {
+  background-color: #554ad8;
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.modal-submit-button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.modal-submit-button:disabled {
+  background-color: #444444;
+  color: #888888;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success State Content styling */
+.modal-success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 0;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-success-icon {
+  color: #6C63FF;
+  margin-bottom: 20px;
+}
+
+.modal-success-title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.modal-success-message {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 400px;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Animations */
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInCard {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive UI Adjustments */
+@media (max-width: 768px) {
+  .lets-work-together-card {
+    padding: 32px 24px;
+    border-radius: 20px;
+    width: 92%;
+  }
+
+  .modal-title {
+    font-size: 32px;
+  }
+
+  .modal-description {
+    font-size: 14px;
+  }
+
+  .modal-bottom-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    margin-top: 0;
+  }
+
+  .modal-submit-button {
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .modal-privacy-policy {
+    text-align: center;
+  }
+
+  .modal-close-btn {
+    top: 16px;
+    right: 16px;
+  }
+}

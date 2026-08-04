@@ -1,0 +1,294 @@
+/* CTA and Newsletter Section */
+.cta-section {
+  width: 100%;
+  background: linear-gradient(264.07deg, #000000 5.12%, #000000 43.64%, #1C0E70 99.07%);
+  color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 50px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-container {
+  width: 100%;
+  max-width: 1282px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Left Column: Title & Description */
+.cta-content-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.cta-title {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+  line-height: 120%;
+  color: #F9F9F9;
+  margin: 0 0 24px 0;
+  letter-spacing: 0%;
+}
+
+.cta-description {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  color: #888585;
+  max-width: 650px;
+  margin: 0;
+}
+
+/* Right Column: Actions */
+.cta-actions-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Main CTA Button */
+.cta-main-btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #6C63FF;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 24px;
+  font-family: 'Switzer', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  max-width: 327px;
+  height: 68px;
+}
+
+.cta-main-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #6C63FF 0%, #A79FFF 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cta-main-btn:hover::before {
+  opacity: 1;
+}
+
+.cta-main-btn:hover {
+  box-shadow: 0 0 24px rgba(108, 99, 255, 0.8);
+}
+
+.cta-main-btn .arrow-icon {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-main-btn:hover .arrow-icon {
+  transform: translateX(6px);
+}
+
+/* Newsletter Box */
+.cta-newsletter-box {
+  margin-top: 48px;
+  width: 100%;
+  max-width: 327px;
+}
+
+.cta-newsletter-title {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.cta-newsletter-subtitle {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #DBDBDB;
+  line-height: 24px;
+  margin: 0 0 16px 0;
+  letter-spacing: 0%;
+}
+
+.cta-newsletter-form {
+  width: 100%;
+}
+
+.cta-input-group {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  box-sizing: border-box;
+}
+
+.cta-email-input {
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b0b;
+  border: 1px solid #888888;
+  border-radius: 10px;
+  padding: 10px 50px 10px 22px;
+  box-sizing: border-box;
+  font-family: 'Switzer', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.cta-email-input:focus {
+  border-color: #6C63FF;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.15);
+}
+
+.cta-email-input::placeholder {
+  color: #666666;
+}
+
+.cta-submit-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: #6C63FF;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.cta-submit-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
+.cta-submit-btn:hover {
+  color: #5b52e0;
+}
+
+.cta-success-message {
+  font-family: 'Switzer', sans-serif;
+  font-size: 13px;
+  color: #10B981;
+  margin-top: 8px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ==================== Desktop Specifications ==================== */
+@media (min-width: 992px) {
+  .cta-section {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 92px;
+    padding-right: 92px;
+  }
+
+  .cta-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .cta-content-column {
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  .cta-title {
+    margin-bottom: 16px;
+  }
+
+  .cta-description {
+    margin-left: 2px;
+  }
+
+  .cta-actions-column {
+    width: auto;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+
+  .cta-main-btn {
+    margin-top: 16px;
+  }
+
+  .cta-newsletter-box {
+    margin-top: 48px;
+  }
+
+  .cta-newsletter-subtitle {
+    margin-bottom: 16px;
+  }
+}
+
+/* Tablet Layout Specs */
+@media (max-width: 1280px) and (min-width: 992px) {
+  .cta-container {
+    width: 90%;
+    max-width: 90%;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .cta-container {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .cta-title {
+    font-size: 36px;
+  }
+
+  .cta-main-btn,
+  .cta-newsletter-box {
+    max-width: 100%;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+  .cta-section {
+    padding: 40px 16px;
+  }
+
+  .cta-title {
+    font-size: 28px;
+  }
+}
