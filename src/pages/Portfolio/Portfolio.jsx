@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './Portfolio.css';
 // Cloudinary Video CDN URLs
 const productionVideo = "https://res.cloudinary.com/g40pmnhj/video/upload/Reel-one_xxqvqk.mp4";
-const productionVideoTwo = "https://res.cloudinary.com/g40pmnhj/video/upload/Reel-three_eyq0ud.mp4";
+const productionVideoTwo = "https://res.cloudinary.com/g40pmnhj/video/upload/Reel-two_b6engr.mp4";
+const productionVideoThree = "https://res.cloudinary.com/g40pmnhj/video/upload/Reel-three_eyq0ud.mp4";
 import arrowLeftIcon from '../../assets/icons/Vector-left.png';
 import arrowRightIcon from '../../assets/icons/Vector-right.png';
 
@@ -138,7 +139,7 @@ const CategorySection = ({ title, description, images, isVertical = false }) => 
         onScroll={checkScroll}
       >
         {images.map((img, index) => {
-          const isVideo = typeof img === 'string' && (img.endsWith('.mp4') || img.includes('dummy.mp4') || img.includes('video') || img.includes('Reel'));
+          const isVideo = typeof img === 'string' && (img.endsWith('.mp4') || img.includes('dummy.mp4') || img.includes('video') || img.includes('Reel') || img.includes('embed') || img.includes('player.cloudinary.com'));
           return (
             <div key={index} className={`grid-image-container ${isVideo ? 'grid-video-container' : 'grid-img-container'}`}>
               {isVideo ? (
@@ -198,7 +199,7 @@ export default function Portfolio() {
     {
       title: "Production",
       description: "High-quality visual storytelling tailored to different communication goals.\nProfessional photography that captures your brand with clarity,\ncreativity, and purpose.",
-      images: [productionVideo, productionVideoTwo],
+      images: [productionVideo, productionVideoTwo, productionVideoThree],
       isVertical: true
     },
     {

@@ -34,23 +34,22 @@ const LetsWorkTogetherModal = () => {
 
     setIsSubmitting(true);
     try {
-      const params = new URLSearchParams();
-      params.append("_subject", "Collaboration Inquiry: Urban Knots Modal Subscriber");
-      params.append("_template", "basic");
-      params.append("_replyto", email);
-      
-      params.append("Greeting", "Dear Urban Knots Team,");
-      params.append("Notification", "A user has requested to collaborate and subscribed via the \"Let's Work Together\" modal on the homepage.");
-      params.append("Subscriber Email", email);
-      params.append("Sign-off", "Best regards, Urban Knots Website Integration.");
-
-      const response = await fetch("https://formsubmit.co/ajax/urbanknotsllp@gmail.com", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { 
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: params.toString()
+        body: JSON.stringify({
+          access_key: "ed8ff5b1-3877-4502-be0d-50d743fd3add",
+          subject: "Collaboration Inquiry: Urban Knots Modal Subscriber",
+          replyto: email,
+          from_name: "Urban Knots Website",
+          Greeting: "Dear Urban Knots Team,",
+          Notification: "A user has requested to collaborate and subscribed via the \"Let's Work Together\" modal on the homepage.",
+          "Subscriber Email": email,
+          "Sign-off": "Best regards, Urban Knots Website Integration."
+        })
       });
 
       if (response.ok) {
