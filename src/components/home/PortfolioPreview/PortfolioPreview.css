@@ -396,6 +396,20 @@
   .project-card {
     flex: 0 0 calc((100vw - 40px - 20px) / 2);
   }
+
+  .view-all-projects-btn {
+    max-width: 280px;
+    height: 56px;
+    font-size: 16px;
+    border-radius: 12px;
+    gap: 12px;
+    padding: 10px 10px 10px 20px;
+  }
+
+  .btn-arrow-icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -418,5 +432,19 @@
 
   .project-card-image-box {
     height: 200px;
+  }
+
+  .view-all-projects-btn {
+    max-width: 240px;
+    height: 48px;
+    font-size: 14px;
+    border-radius: 10px;
+    gap: 8px;
+    padding: 8px 8px 8px 16px;
+  }
+
+  .btn-arrow-icon {
+    width: 20px;
+    height: 20px;
   }
 }
