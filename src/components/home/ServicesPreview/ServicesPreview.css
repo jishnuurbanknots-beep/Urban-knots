@@ -378,13 +378,22 @@
 
   .service-preview-explore-btn {
     width: 100%;
-    max-width: 327px;
-    height: 68px;
+    max-width: 280px;
+    height: 56px;
+    font-size: 16px;
+    border-radius: 12px;
+    gap: 12px;
     margin-left: 0;
+  }
+
+  .service-preview-btn-arrow-icon {
+    width: 24px;
+    height: 24px;
   }
 
   .service-preview-heading {
     font-size: 40px;
+    line-height: 1.25;
   }
 
   .service-preview-grid {
@@ -399,6 +408,19 @@
 
   .service-preview-heading {
     font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .service-preview-explore-btn {
+    max-width: 240px;
+    height: 48px;
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .service-preview-btn-arrow-icon {
+    width: 20px;
+    height: 20px;
   }
 
   .service-preview-grid {

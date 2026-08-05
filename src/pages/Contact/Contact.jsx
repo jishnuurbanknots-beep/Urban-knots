@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { jsPDF } from 'jspdf';
 import './Contact.css';
 import sendIcon from '../../assets/icons/lsicon_send-filled.png';
-import { jsPDF } from 'jspdf';
+
 
 // SVG Icons
 const MapPinIcon = () => (
@@ -166,10 +167,14 @@ ${formData.fullName}`;
 
       // Construct FormData to support attachments
       const formDataToSend = new FormData();
-      formDataToSend.append("access_key", "ed8ff5b1-3877-4502-be0d-50d743fd3add");
-      formDataToSend.append("subject", `Project Inquiry: ${formData.fullName}`);
-      formDataToSend.append("replyto", formData.email);
-      formDataToSend.append("from_name", "Urban Knots Website");
+      formDataToSend.append("_subject", `Project Inquiry: ${formData.fullName}`);
+      formDataToSend.append("_template", "basic");
+      formDataToSend.append("_replyto", formData.email);
+      
+      formDataToSend.append("Full Name", formData.fullName);
+      formDataToSend.append("Email Address", formData.email);
+      formDataToSend.append("Phone Number", formData.phoneNumber || "N/A");
+      formDataToSend.append("Company Name", formData.company || "N/A");
       
       formDataToSend.append("Greeting", "Dear Urban Knots Team,");
       formDataToSend.append("Introduction", `My name is ${formData.fullName}${companyInfo}, and I am writing to submit a project inquiry through the contact form on your website.`);
@@ -177,9 +182,9 @@ ${formData.fullName}`;
       formDataToSend.append("Project Details", formData.projectDetails);
       formDataToSend.append("Sign-off", `Thank you for your time. I look forward to hearing from you. Best regards, ${formData.fullName}.`);
       
-      formDataToSend.append("attachment", pdfFile);
+      formDataToSend.append("Attachment", pdfFile);
 
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://formsubmit.co/ajax/urbanknotsllp@gmail.com", {
         method: "POST",
         headers: { 
           "Accept": "application/json"

@@ -135,7 +135,7 @@ export default function BrandingWorks() {
       {/* 3. CALL TO ACTION */}
       <section className="branding-works-cta-section">
         <span className="branding-works-subtitle-blue">HAVE A PROJECT IN MIND ?</span>
-        <h2>Let’s Create Something<br/>Amazing Together</h2>
+        <h2>Let’s Create Something <br /> Amazing Together</h2>
         <p>We're ready to help you turn your ideas into real results.</p>
         <Link to="/contact" className="branding-works-btn-outline-dark">
           Start Your Project <ArrowRight />

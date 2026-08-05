@@ -210,6 +210,18 @@ a.contact-link-text:hover {
   color: #6C63FF;
 }
 
+.footer-contact-segment {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .footer-contact-segment {
+    display: block;
+    line-height: 1.5;
+  }
+}
+
 @media (min-width: 768px) {
   .contact-link-text {
     white-space: nowrap;
@@ -317,6 +329,10 @@ a.contact-link-text:hover {
 
   .footer-branding-text {
     max-width: 100%;
+  }
+
+  .contact-item {
+    margin-bottom: 24px;
   }
 
   .footer-bottom-bar {

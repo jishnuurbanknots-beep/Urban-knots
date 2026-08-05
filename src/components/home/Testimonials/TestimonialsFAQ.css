@@ -373,24 +373,33 @@
   }
 
   .testimonial-card {
-    padding: 24px;
+    padding: 20px;
     min-height: auto;
   }
 
   .testimonial-text {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .testimonial-name {
+    font-size: 14px;
+  }
+
+  .testimonial-role {
+    font-size: 12px;
   }
 
   .faq-question-btn {
-    padding: 20px;
+    padding: 16px 20px;
   }
 
   .faq-question-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .faq-answer-text {
-    padding: 0 20px 20px 20px;
-    font-size: 14px;
+    padding: 0 20px 16px 20px;
+    font-size: 13px;
   }
 }

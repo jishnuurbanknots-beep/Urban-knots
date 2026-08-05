@@ -174,7 +174,7 @@ const Services = () => {
               </div>
             </div>
             <div className="services-cta-right">
-              <button className="services-cta-button">
+              <button className="services-cta-button" onClick={() => window.open('https://wa.me/918129195151', '_blank')}>
                 Start Your Project <img src="/images/hero/Vector-mind.png" alt="Arrow" className="services-cta-button-icon" />
               </button>
             </div>

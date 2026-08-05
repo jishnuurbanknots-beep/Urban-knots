@@ -109,10 +109,10 @@ const ServicesPreview = () => {
         <div className="service-preview-header">
           <div className="service-preview-header-left">
             <span className="service-preview-subtitle">WHAT WE DO</span>
-            <h2 className="service-preview-heading">Creative Solutions For<br />Modern Businesses</h2>
+            <h2 className="service-preview-heading">Creative Solutions For <br /> Modern Businesses</h2>
           </div>
           <div className="service-preview-header-right">
-            <p className="service-preview-header-description">Where creativity meets purpose, and every<br />idea is designed to leave a lasting impression.</p>
+            <p className="service-preview-header-description">Where creativity meets purpose, and every <br /> idea is designed to leave a lasting impression.</p>
             <Link to="/services" className="service-preview-explore-btn">
               Explore All Services
               <svg

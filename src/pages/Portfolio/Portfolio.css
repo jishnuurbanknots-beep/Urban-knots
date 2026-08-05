@@ -483,6 +483,18 @@ button,
 
   .btn-talk {
     align-self: center;
+    width: 100%;
+    max-width: 280px;
+    height: 56px;
+    font-size: 16px;
+    border-radius: 12px;
+    gap: 12px;
+    padding: 10px 10px 10px 20px;
+  }
+
+  .btn-talk-icon {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -495,13 +507,24 @@ button,
     height: 500px;
   }
 
+  .hero-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
   .hero-content h1 {
     font-size: 38px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-content p {
     font-size: 14px;
     line-height: 20px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .showcase-intro {
@@ -550,11 +573,96 @@ button,
     margin-bottom: 2rem;
   }
 
-  br {
+  .portfolio-page br,
+  .portfolio-cta-section br {
     display: none;
   }
 
   .category-text p {
     white-space: normal !important;
+  }
+
+  .btn-outline-dark {
+    width: 100%;
+    max-width: 280px;
+    height: 56px;
+    font-size: 16px;
+    border-radius: 12px;
+    gap: 12px;
+    padding: 10px 10px 10px 20px;
+  }
+
+  .btn-outline-dark svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .showcase-intro p,
+  .feature-content p,
+  .category-text p {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .subtitle-blue {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+  .showcase-intro h2,
+  .feature-content h2,
+  .category-text h2 {
+    font-size: 26px;
+  }
+
+  .showcase-intro p,
+  .feature-content p,
+  .category-text p {
+    font-size: 14px;
+  }
+
+  .portfolio-cta-section h2 {
+    font-size: 26px;
+  }
+
+  .portfolio-cta-section p {
+    font-size: 13px;
+  }
+
+  .btn-talk {
+    max-width: 240px;
+    height: 48px;
+    font-size: 14px;
+    border-radius: 10px;
+    gap: 8px;
+    padding: 8px 8px 8px 16px;
+  }
+
+  .btn-talk-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .btn-outline-dark {
+    max-width: 240px;
+    height: 48px;
+    font-size: 14px;
+    border-radius: 10px;
+    gap: 8px;
+    padding: 8px 8px 8px 16px;
+  }
+
+  .btn-outline-dark svg {
+    width: 20px;
+    height: 20px;
   }
 }

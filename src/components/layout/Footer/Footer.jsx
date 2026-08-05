@@ -85,7 +85,8 @@ const Footer = () => {
                 <img src="/images/footer/phone.png" alt="Phone" />
               </span>
               <span className="contact-link-text">
-                +91 8129 195 151, +91 8281 919 151
+                <span className="footer-contact-segment">+91 8129 195 151,</span>{" "}
+                <span className="footer-contact-segment">+91 8281 919 151</span>
               </span>
             </li>
 
@@ -95,7 +96,10 @@ const Footer = () => {
                 <img src="/images/footer/location.png" alt="Location" />
               </span>
               <span className="contact-link-text">
-                C-29, 3rd Floor, Malabar Gate,<br /> Ram Mohan Road, Kozhikode - 673004
+                <span className="footer-contact-segment">C-29, 3rd Floor,</span>{" "}
+                <span className="footer-contact-segment">Malabar Gate,</span>{" "}
+                <span className="footer-contact-segment">Ram Mohan Road,</span>{" "}
+                <span className="footer-contact-segment">Kozhikode - 673004</span>
               </span>
             </li>
 

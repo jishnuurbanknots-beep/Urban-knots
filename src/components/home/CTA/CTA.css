@@ -276,7 +276,20 @@
     font-size: 36px;
   }
 
-  .cta-main-btn,
+  .cta-main-btn {
+    max-width: 280px;
+    height: 56px;
+    font-size: 16px;
+    border-radius: 12px;
+    gap: 12px;
+    padding: 10px 20px;
+  }
+
+  .cta-main-btn .arrow-icon {
+    width: 24px;
+    height: 24px;
+  }
+
   .cta-newsletter-box {
     max-width: 100%;
   }
@@ -290,5 +303,19 @@
 
   .cta-title {
     font-size: 28px;
+  }
+
+  .cta-main-btn {
+    max-width: 240px;
+    height: 48px;
+    font-size: 14px;
+    border-radius: 10px;
+    gap: 8px;
+    padding: 8px 16px;
+  }
+
+  .cta-main-btn .arrow-icon {
+    width: 20px;
+    height: 20px;
   }
 }
