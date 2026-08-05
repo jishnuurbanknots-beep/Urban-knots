@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Portfolio.css';
 // Cloudinary Video CDN URLs
-const productionVideo = "https://res.cloudinary.com/g40pmnhj/video/upload/Reel-one_xxqvqk.mp4";
-const productionVideoTwo = "https://res.cloudinary.com/g40pmnhj/video/upload/Reel-two_b6engr.mp4";
-const productionVideoThree = "https://res.cloudinary.com/g40pmnhj/video/upload/Reel-three_eyq0ud.mp4";
+const productionVideo = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-one_xxqvqk.mp4";
+const productionVideoTwo = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-two_b6engr.mp4";
+const productionVideoThree = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-three_eyq0ud.mp4";
 import arrowLeftIcon from '../../assets/icons/Vector-left.png';
 import arrowRightIcon from '../../assets/icons/Vector-right.png';
 
@@ -98,11 +98,35 @@ const CategorySection = ({ title, description, images, isVertical = false }) => 
   const scroll = (direction) => {
     if (gridRef.current) {
       const container = gridRef.current;
-      const scrollAmount = container.clientWidth * 0.8;
-      if (direction === 'left') {
-        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      const items = container.querySelectorAll('.grid-image-container');
+      
+      if (items && items.length > 0) {
+        const itemWidth = items[0].offsetWidth;
+        
+        // Calculate gap based on positioning of first two items if possible
+        let gap = 24; 
+        if (items.length > 1) {
+          gap = items[1].offsetLeft - items[0].offsetLeft - itemWidth;
+        }
+        
+        const stepWidth = itemWidth + gap;
+        // Determine how many items are fully or mostly visible
+        const visibleCount = Math.max(1, Math.round(container.clientWidth / stepWidth));
+        const scrollAmount = stepWidth * visibleCount;
+        
+        if (direction === 'left') {
+          container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
       } else {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        // Fallback if children elements are not rendered yet
+        const scrollAmount = container.clientWidth * 0.8;
+        if (direction === 'left') {
+          container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
       }
     }
   };
@@ -208,15 +232,16 @@ export default function Portfolio() {
       images: [
         "/images/clients/photography-one.jpg",
         "/images/clients/photography-two.jpg",
+        "/images/clients/photography-ten.jpeg",
         "/images/clients/photography-three.jpg",
         "/images/clients/photography-four.jpg",
         "/images/clients/photography-five.jpg",
         "/images/clients/photography-six.jpg",
+        "/images/clients/photography-eleven.jpeg",
         "/images/clients/photography-seven.jpg",
         "/images/clients/photography-eight.jpg",
         "/images/clients/photography-nine.jpg",
-        "/images/clients/photography-ten.jpeg",
-        "/images/clients/photography-eleven.jpeg",
+        
 
       ]
     }
