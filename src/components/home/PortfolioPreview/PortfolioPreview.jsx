@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './PortfolioPreview.css';
 
@@ -11,10 +11,68 @@ const ViewAllProjectsIcon = () => (
 
 const PortfolioPreview = () => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [totalDots, setTotalDots] = useState(2);
   const sliderRef = useRef(null);
   const isDragging = useRef(false);
+  const isHovered = useRef(false);
   const startX = useRef(0);
   const scrollStart = useRef(0);
+
+  // Auto-play interval to slide automatically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (isDragging.current || isHovered.current) return;
+      
+      const totalCards = projects.length;
+      let nextPage;
+      
+      if (totalDots === 2) {
+        // Desktop: Toggle page index
+        nextPage = currentPage < 3 ? 3 : 0;
+      } else {
+        // Mobile/Tablet: move card-by-card
+        nextPage = (currentPage + 1) % totalCards;
+        
+        // Wrap around at max scroll bounds
+        if (sliderRef.current) {
+          const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
+          if (sliderRef.current.scrollLeft >= maxScroll - 10 && nextPage > currentPage) {
+            nextPage = 0;
+          }
+        }
+      }
+      
+      scrollToCard(nextPage);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [currentPage, totalDots]);
+
+  // Determine dynamic dot counts depending on window resize
+  useEffect(() => {
+    const updateDotsCount = () => {
+      if (window.innerWidth >= 992) {
+        setTotalDots(2); // Desktop: 6 cards, 3 visible -> 2 pages
+      } else if (window.innerWidth >= 600) {
+        setTotalDots(5); // Tablet: 6 cards, 2 visible -> 5 steps
+      } else {
+        setTotalDots(6); // Mobile: 6 cards, 1 visible -> 6 steps
+      }
+    };
+
+    updateDotsCount();
+    window.addEventListener('resize', updateDotsCount);
+    return () => window.removeEventListener('resize', updateDotsCount);
+  }, []);
+
+  const handleMouseEnter = () => {
+    isHovered.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isHovered.current = false;
+    handleMouseUpOrLeave();
+  };
 
   // Disable snap & smooth scroll on drag start
   const handleMouseDown = (e) => {
@@ -45,28 +103,44 @@ const PortfolioPreview = () => {
       sliderRef.current.style.scrollSnapType = 'x mandatory';
       sliderRef.current.style.scrollBehavior = 'smooth';
 
-      // Snap to closest page
+      // Snap to closest card
       const scrollLeft = sliderRef.current.scrollLeft;
-      const pageWidth = sliderRef.current.clientWidth;
-      const pageIndex = Math.round(scrollLeft / pageWidth);
-      
-      sliderRef.current.scrollTo({
-        left: pageIndex * pageWidth,
-        behavior: 'smooth'
+      const cards = sliderRef.current.querySelectorAll('.project-card');
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardLeft = card.offsetLeft - sliderRef.current.offsetLeft;
+        const distance = Math.abs(cardLeft - scrollLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = idx;
+        }
       });
-      setCurrentPage(pageIndex);
+
+      if (cards[closestIndex]) {
+        const targetScroll = cards[closestIndex].offsetLeft - sliderRef.current.offsetLeft;
+        sliderRef.current.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+        setCurrentPage(closestIndex);
+      }
     }
   };
 
-  // Click dot page scrolling
-  const scrollToPage = (pageIndex) => {
+  // Click card page scrolling
+  const scrollToCard = (index) => {
     if (sliderRef.current) {
-      const pageWidth = sliderRef.current.clientWidth;
-      sliderRef.current.scrollTo({
-        left: pageIndex * pageWidth,
-        behavior: 'smooth'
-      });
-      setCurrentPage(pageIndex);
+      const cards = sliderRef.current.querySelectorAll('.project-card');
+      if (cards && cards[index]) {
+        const targetScroll = cards[index].offsetLeft - sliderRef.current.offsetLeft;
+        sliderRef.current.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+        setCurrentPage(index);
+      }
     }
   };
 
@@ -74,14 +148,39 @@ const PortfolioPreview = () => {
   const handleScroll = () => {
     if (sliderRef.current && !isDragging.current) {
       const scrollLeft = sliderRef.current.scrollLeft;
-      const pageWidth = sliderRef.current.clientWidth;
-      if (pageWidth > 0) {
-        const pageIndex = Math.round(scrollLeft / pageWidth);
-        // Prevent state spam
-        if (pageIndex !== currentPage && pageIndex >= 0 && pageIndex <= 1) {
-          setCurrentPage(pageIndex);
+      const cards = sliderRef.current.querySelectorAll('.project-card');
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardLeft = card.offsetLeft - sliderRef.current.offsetLeft;
+        const distance = Math.abs(cardLeft - scrollLeft);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = idx;
         }
+      });
+
+      if (closestIndex !== currentPage) {
+        setCurrentPage(closestIndex);
       }
+    }
+  };
+
+  const handleDotClick = (dotIdx) => {
+    if (totalDots === 2) {
+      scrollToCard(dotIdx * 3);
+    } else {
+      scrollToCard(dotIdx);
+    }
+  };
+
+  const isDotActive = (dotIdx) => {
+    if (totalDots === 2) {
+      const activeDot = currentPage < 3 ? 0 : 1;
+      return dotIdx === activeDot;
+    } else {
+      return dotIdx === currentPage;
     }
   };
 
@@ -161,7 +260,8 @@ const PortfolioPreview = () => {
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
-          onMouseLeave={handleMouseUpOrLeave}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <div className="portfolio-slider-inner">
             {projects.map((project) => (
@@ -180,16 +280,14 @@ const PortfolioPreview = () => {
 
         {/* Pagination Dots */}
         <div className="portfolio-dots">
-          <button 
-            className={`portfolio-dot ${currentPage === 0 ? 'active' : ''}`}
-            onClick={() => scrollToPage(0)}
-            aria-label="View page 1"
-          />
-          <button 
-            className={`portfolio-dot ${currentPage === 1 ? 'active' : ''}`}
-            onClick={() => scrollToPage(1)}
-            aria-label="View page 2"
-          />
+          {Array.from({ length: totalDots }).map((_, idx) => (
+            <button 
+              key={idx}
+              className={`portfolio-dot ${isDotActive(idx) ? 'active' : ''}`}
+              onClick={() => handleDotClick(idx)}
+              aria-label={`View page ${idx + 1}`}
+            />
+          ))}
         </div>
 
       </div>
