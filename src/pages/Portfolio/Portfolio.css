@@ -384,13 +384,15 @@ button,
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Hide scrollbar Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar Firefox */
   gap: 2rem;
   width: 100%;
 }
 
 .category-grid::-webkit-scrollbar {
-  display: none; /* Hide scrollbar Chrome/Safari/Edge */
+  display: none;
+  /* Hide scrollbar Chrome/Safari/Edge */
 }
 
 

@@ -5,6 +5,10 @@ import './Portfolio.css';
 const productionVideo = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-one_xxqvqk.mp4";
 const productionVideoTwo = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-two_b6engr.mp4";
 const productionVideoThree = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-three_eyq0ud.mp4";
+const productionVideoFour = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-four_m5zpfq.mp4";
+const productionVideoFive = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-five_hyuf1f.mp4";
+const productionVideoSix = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-six_p4szk1.mp4";
+
 import arrowLeftIcon from '../../assets/icons/Vector-left.png';
 import arrowRightIcon from '../../assets/icons/Vector-right.png';
 
@@ -223,7 +227,14 @@ export default function Portfolio() {
     {
       title: "Production",
       description: "High-quality visual storytelling tailored to different communication goals.\nProfessional photography that captures your brand with clarity,\ncreativity, and purpose.",
-      images: [productionVideo, productionVideoTwo, productionVideoThree],
+      images: [
+        productionVideo, 
+        productionVideoTwo, 
+        productionVideoThree,
+        productionVideoFour,
+        productionVideoFive,
+        productionVideoSix
+      ],
       isVertical: true
     },
     {
