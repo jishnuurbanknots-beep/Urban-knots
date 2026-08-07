@@ -63,23 +63,7 @@ const Contact = () => {
     
     try {
       const companyInfo = formData.company ? ` representing ${formData.company}` : '';
-      const emailMessage = `Dear Urban Knots Team,
 
-I hope this email finds you well.
-
-My name is ${formData.fullName}${companyInfo}, and I am writing to submit a project inquiry through the contact form on your website.
-
-Here is my contact information:
-- Email: ${formData.email}
-- Phone Number: ${formData.phoneNumber || 'N/A'}
-
-Project Details:
-${formData.projectDetails}
-
-Thank you for your time. I look forward to hearing from you.
-
-Best regards,
-${formData.fullName}`;
 
       // Generate PDF on the fly
       const doc = new jsPDF();

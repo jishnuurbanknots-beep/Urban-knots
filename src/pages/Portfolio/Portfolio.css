@@ -407,7 +407,7 @@ button,
 .grid-img-container {
   width: calc((100% - 2 * 2rem) / 3);
   max-width: 411px;
-  aspect-ratio: 411 / 454;
+  aspect-ratio: 411 / 514;
   border-radius: 9px;
 }
 
@@ -546,7 +546,7 @@ button,
   .grid-img-container {
     width: 85%;
     max-width: 320px;
-    aspect-ratio: 411 / 454;
+    aspect-ratio: 411 / 514;
   }
 
   .grid-video-container {

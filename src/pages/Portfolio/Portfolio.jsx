@@ -2,12 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Portfolio.css';
 // Cloudinary Video CDN URLs
-const productionVideo = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-one_xxqvqk.mp4";
+const productionVideo = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-five_hyuf1f.mp4";
 const productionVideoTwo = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-two_b6engr.mp4";
-const productionVideoThree = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-three_eyq0ud.mp4";
-const productionVideoFour = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-four_m5zpfq.mp4";
-const productionVideoFive = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-five_hyuf1f.mp4";
-const productionVideoSix = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-six_p4szk1.mp4";
+const productionVideoThree = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/3rd_Video_nddhvb.mp4";
+const productionVideoFour = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/4th_Video_k7suih.mp4";
+const productionVideoFive = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-six_p4szk1.mp4";
+const productionVideoSix = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-three_eyq0ud.mp4";
+const productionVideoSeven = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/7th_video_cc9kkp.mp4";
+const productionVideoEight = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/8thth_video_rwssc1.mp4";
+const productionVideoNine = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-one_xxqvqk.mp4";
+const productionVideoTen = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-four_m5zpfq.mp4";
 
 import arrowLeftIcon from '../../assets/icons/Vector-left.png';
 import arrowRightIcon from '../../assets/icons/Vector-right.png';
@@ -103,21 +107,21 @@ const CategorySection = ({ title, description, images, isVertical = false }) => 
     if (gridRef.current) {
       const container = gridRef.current;
       const items = container.querySelectorAll('.grid-image-container');
-      
+
       if (items && items.length > 0) {
         const itemWidth = items[0].offsetWidth;
-        
+
         // Calculate gap based on positioning of first two items if possible
-        let gap = 24; 
+        let gap = 24;
         if (items.length > 1) {
           gap = items[1].offsetLeft - items[0].offsetLeft - itemWidth;
         }
-        
+
         const stepWidth = itemWidth + gap;
         // Determine how many items are fully or mostly visible
         const visibleCount = Math.max(1, Math.round(container.clientWidth / stepWidth));
         const scrollAmount = stepWidth * visibleCount;
-        
+
         if (direction === 'left') {
           container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         } else {
@@ -192,11 +196,16 @@ export default function Portfolio() {
       title: "Print media",
       description: "From brochures and flyers to posters, menus, and marketing collateral,\nwe create print materials that communicate clearly while leaving a\nlasting impression.",
       images: [
-        "/images/clients/Rectangle-new-two.png",
-        "/images/clients/Rectangle-new.png",
-        "/images/clients/escape.jpg",
-        "/images/clients/Rectangle-new-three.jpg",
-        "/images/clients/Rectangle-new-four.jpg"
+        "/images/clients/Print01.png",
+        "/images/clients/Print02.png",
+        "/images/clients/Print03.png",
+        "/images/clients/Print04.png",
+        "/images/clients/Print05.png",
+        // "/images/clients/Rectangle-new-two.png",
+        // "/images/clients/Rectangle-new.png",
+        // "/images/clients/escape.jpg",
+        // "/images/clients/Rectangle-new-three.jpg",
+        // "/images/clients/Rectangle-new-four.jpg"
       ]
     },
     {
@@ -214,13 +223,17 @@ export default function Portfolio() {
       title: "Social media",
       description: "Creative content designed to engage audiences, strengthen brand\npresence, and drive meaningful interactions across digital platforms.",
       images: [
-        "/images/clients/socail-media-one.png",
-        "/images/clients/social-media-two.png",
-        "/images/clients/social-media-three.png",
+        "/images/clients/socail-media-one.jpeg",
+        "/images/clients/socail-media-one-AA.png",
         "/images/clients/social-media-four.jpg",
+        "/images/clients/social-media-seven.jpg",
+        "/images/clients/socail-media-Habit.jpg",
+        "/images/clients/social-media-AA-02.jpeg",
+        "/images/clients/social-media-Onam-AA.jpg",
+        "/images/clients/social-media-three.png",
+        "/images/clients/social-media-two.png",
         "/images/clients/social-media-five.jpg",
         "/images/clients/social-media-six.jpg",
-        "/images/clients/social-media-seven.jpg",
         "/images/clients/social-media-eight.jpg"
       ]
     },
@@ -228,12 +241,16 @@ export default function Portfolio() {
       title: "Production",
       description: "High-quality visual storytelling tailored to different communication goals.\nProfessional photography that captures your brand with clarity,\ncreativity, and purpose.",
       images: [
-        productionVideo, 
-        productionVideoTwo, 
+        productionVideo,
+        productionVideoTwo,
         productionVideoThree,
         productionVideoFour,
         productionVideoFive,
-        productionVideoSix
+        productionVideoSix,
+        productionVideoSeven,
+        productionVideoEight,
+        productionVideoNine,
+        productionVideoTen
       ],
       isVertical: true
     },
@@ -241,18 +258,20 @@ export default function Portfolio() {
       title: "Photography",
       description: "Professional photography that captures your brand with clarity, creativity,\nand purpose.",
       images: [
-        "/images/clients/photography-one.jpg",
-        "/images/clients/photography-two.jpg",
-        "/images/clients/photography-ten.jpeg",
-        "/images/clients/photography-three.jpg",
         "/images/clients/photography-four.jpg",
+        "/images/clients/photography-new.png",
+        "/images/clients/photography-eleven.jpeg",
+        "/images/clients/photography-one.jpg",
+        "/images/clients/photography-ten.jpeg",
+        "/images/clients/photography-two.jpg",
+        "/images/clients/photography-three.jpg",
         "/images/clients/photography-five.jpg",
         "/images/clients/photography-six.jpg",
-        "/images/clients/photography-eleven.jpeg",
         "/images/clients/photography-seven.jpg",
         "/images/clients/photography-eight.jpg",
         "/images/clients/photography-nine.jpg",
-        
+
+
 
       ]
     }

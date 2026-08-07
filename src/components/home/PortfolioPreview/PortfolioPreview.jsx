@@ -9,6 +9,53 @@ const ViewAllProjectsIcon = () => (
   </svg>
 );
 
+const projects = [
+  // Page 1
+  {
+    id: 1,
+    title: 'Branding',
+    category: 'Branding, Identity',
+    image: '/images/portfolio/Branding.png',
+    page: 0
+  },
+  {
+    id: 2,
+    title: 'Website',
+    category: 'Web Design, Devlopment',
+    image: '/images/portfolio/Web.jpg',
+    page: 0
+  },
+  {
+    id: 3,
+    title: 'Digital Marketing',
+    category: 'Social Media Management, SEO, Etc.',
+    image: '/images/portfolio/Marketing.jpg',
+    page: 0
+  },
+  // Page 2
+  {
+    id: 4,
+    title: 'Print Designs',
+    category: 'Banners, Marketing metrials Etc.',
+    image: '/images/portfolio/Print Design.jpg',
+    page: 1
+  },
+  {
+    id: 5,
+    title: 'Production',
+    category: 'Videography, Photoshoots',
+    image: '/images/portfolio/Production.jpeg',
+    page: 1
+  },
+  {
+    id: 6,
+    title: 'Package Designs',
+    category: 'All type of package designs',
+    image: '/images/portfolio/Packaging.png',
+    page: 1
+  }
+];
+
 const PortfolioPreview = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalDots, setTotalDots] = useState(2);
@@ -17,6 +64,21 @@ const PortfolioPreview = () => {
   const isHovered = useRef(false);
   const startX = useRef(0);
   const scrollStart = useRef(0);
+
+  // Click card page scrolling
+  const scrollToCard = (index) => {
+    if (sliderRef.current) {
+      const cards = sliderRef.current.querySelectorAll('.project-card');
+      if (cards && cards[index]) {
+        const targetScroll = cards[index].offsetLeft - sliderRef.current.offsetLeft;
+        sliderRef.current.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+        setCurrentPage(index);
+      }
+    }
+  };
 
   // Auto-play interval to slide automatically
   useEffect(() => {
@@ -129,21 +191,6 @@ const PortfolioPreview = () => {
     }
   };
 
-  // Click card page scrolling
-  const scrollToCard = (index) => {
-    if (sliderRef.current) {
-      const cards = sliderRef.current.querySelectorAll('.project-card');
-      if (cards && cards[index]) {
-        const targetScroll = cards[index].offsetLeft - sliderRef.current.offsetLeft;
-        sliderRef.current.scrollTo({
-          left: targetScroll,
-          behavior: 'smooth'
-        });
-        setCurrentPage(index);
-      }
-    }
-  };
-
   // Native Scroll Listener to update dots when swiping on touch devices
   const handleScroll = () => {
     if (sliderRef.current && !isDragging.current) {
@@ -183,53 +230,6 @@ const PortfolioPreview = () => {
       return dotIdx === currentPage;
     }
   };
-
-  const projects = [
-    // Page 1
-    {
-      id: 1,
-      title: 'Branding',
-      category: 'Branding, Identity',
-      image: '/images/portfolio/Branding.png',
-      page: 0
-    },
-    {
-      id: 2,
-      title: 'Website',
-      category: 'Web Design, Devlopment',
-      image: '/images/portfolio/Web.jpg',
-      page: 0
-    },
-    {
-      id: 3,
-      title: 'Digital Marketing',
-      category: 'Social Media Management, SEO, Etc.',
-      image: '/images/portfolio/Marketing.jpg',
-      page: 0
-    },
-    // Page 2
-    {
-      id: 4,
-      title: 'Print Designs',
-      category: 'Banners, Marketing metrials Etc.',
-      image: '/images/portfolio/Print Design.jpg',
-      page: 1
-    },
-    {
-      id: 5,
-      title: 'Production',
-      category: 'Videography, Photoshoots',
-      image: '/images/portfolio/Production.jpeg',
-      page: 1
-    },
-    {
-      id: 6,
-      title: 'Package Designs',
-      category: 'All type of package designs',
-      image: '/images/portfolio/Packaging.png',
-      page: 1
-    }
-  ];
 
   return (
     <section className="portfolio-section" id="projects">
