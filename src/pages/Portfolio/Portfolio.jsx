@@ -11,7 +11,6 @@ const productionVideoSix = "https://res.cloudinary.com/g40pmnhj/video/upload/w_7
 const productionVideoSeven = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/7th_video_cc9kkp.mp4";
 const productionVideoEight = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/8thth_video_rwssc1.mp4";
 const productionVideoNine = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-one_xxqvqk.mp4";
-const productionVideoTen = "https://res.cloudinary.com/g40pmnhj/video/upload/w_720,q_auto,vc_auto/Reel-four_m5zpfq.mp4";
 
 import arrowLeftIcon from '../../assets/icons/Vector-left.png';
 import arrowRightIcon from '../../assets/icons/Vector-right.png';
@@ -250,7 +249,6 @@ export default function Portfolio() {
         productionVideoSeven,
         productionVideoEight,
         productionVideoNine,
-        productionVideoTen
       ],
       isVertical: true
     },
